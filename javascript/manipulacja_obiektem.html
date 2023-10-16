@@ -102,38 +102,24 @@
     {
         var obiekt = document.querySelector('.obiekt');
         if( obiekt.style.display =='block' || obiekt.style.display == '')
-        {
             obiekt.style.display="none";
-        }else{
-            obiekt.style.display="block";
-        }
+        else
+            obiekt.style.display="block";    
     }
     function kolor()
-    {
-        
+    {    
         var kolor = document.querySelector('#kolor');
         document.querySelector('.obiekt').style.backgroundColor = kolor.value;
-
-
     }
     function jakiprzycisk(event) {
             if(event.keyCode==37)
-            {
                 lewo();
-            }
             if(event.keyCode==38)
-            {
                 gora();
-            }
             if(event.keyCode==39)
-            {
                 prawo();
-            }
             if(event.keyCode==40)
-            {
                 dol();
-            }
-
         }   
 
 
