@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nawigacja
+        {
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .obiekt
+        {
+            width: 80px;
+            height: 80px;
+            background-color: #666666;
+            position: absolute;
+            transition: 0.5s;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="nawigacja">
+        <input type="button" value="lewo" onclick="lewo()">
+        <input type="button" value="gora" onclick="gora()">
+        <input type="button" value="prawo" onclick="prawo()">
+        <input type="button" value="dol" onclick="dol()">
+        <label>left: <input type="text" value="" id="left"></label> 
+        <label>top: <input type="text" value="" id="top"></label> 
+        <input type="button" value="pokaż/ukryj" onclick="ukryj()">
+        <label><input type="text" value="#" id="kolor"></label> 
+        <input type="button" value="ustaw kolor" onclick="kolor()">
+    </div>
+    <hr>
+    <div class="obiekt"></div>
+
+<body onkeyup="jakiprzycisk(event)">
+<script>
+    //info o elemencie w konsoli
+    var tam = document.querySelector('.obiekt');
+    infos(tam)
+    function infos(blok)
+    {
+        document.querySelector('#left').value = blok.offsetLeft;
+        document.querySelector('#top').value = blok.offsetTop;
+    }
+    function info(element)
+    {
+        console.log('left: ' + element.offsetLeft,  "top: " + element.offsetTop);
+        console.log('Okno szer: ' + window.innerWidth, "okno wys: " + window.innerHeight);
+        
+    }
+    
+    function prawo()
+    {
+        var obiekt = document.querySelector('.obiekt');
+        //obiekt.style.left = "100px";
+        //jezeli suma pozycji od lewej jest mniejsza od okna 
+        if((obiekt.offsetLeft + obiekt.offsetWidth) < window.innerWidth)
+        {
+            obiekt.style.left = (obiekt.offsetLeft + 10) + "px";
+            document.querySelector('#left').value = (obiekt.offsetLeft +10);
+            info(obiekt);
+            
+        }
+
+    }
+    function lewo()
+    {
+        var obiekt = document.querySelector('.obiekt');
+        if((obiekt.offsetLeft ) >0)
+        {
+            obiekt.style.left = (obiekt.offsetLeft - 10) + "px";
+            document.querySelector('#left').value = (obiekt.offsetLeft -10);
+            info(obiekt);
+        }
+    }
+    function gora()
+    {
+        var obiekt = document.querySelector('.obiekt');
+        if(obiekt.offsetTop > 70)
+        {
+            obiekt.style.top = (obiekt.offsetTop - 10) + "px";
+            document.querySelector('#top').value = (obiekt.offsetTop - 10);
+            info(obiekt);
+        }
+    }
+
+    function dol()
+    {
+        var obiekt = document.querySelector('.obiekt');
+        if((obiekt.offsetTop + obiekt.offsetHeight) < window.innerWidth)
+        {
+            obiekt.style.top = (obiekt.offsetTop + 10) + "px";
+            document.querySelector('#top').value = (obiekt.offsetTop + 10);
+            info(obiekt);
+        }
+    }
+    function ukryj()
+    {
+        var obiekt = document.querySelector('.obiekt');
+        if( obiekt.style.display =='block' || obiekt.style.display == '')
+        {
+            obiekt.style.display="none";
+        }else{
+            obiekt.style.display="block";
+        }
+    }
+    function kolor()
+    {
+        
+        var kolor = document.querySelector('#kolor');
+        document.querySelector('.obiekt').style.backgroundColor = kolor.value;
+
+
+    }
+    function jakiprzycisk(event) {
+            if(event.keyCode==37)
+            {
+                lewo();
+            }
+            if(event.keyCode==38)
+            {
+                gora();
+            }
+            if(event.keyCode==39)
+            {
+                prawo();
+            }
+            if(event.keyCode==40)
+            {
+                dol();
+            }
+
+        }   
+
+
+</script>
+</html>
