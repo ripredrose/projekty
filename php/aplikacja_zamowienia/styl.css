@@ -1,0 +1,33 @@
+body
+{
+    background-color: #666;
+    color:white;
+}
+h1{
+    text-align: center;
+    background-color: #777;
+    padding: 15px;
+    width: 60%;
+    margin:30px auto;
+}
+.zamowienie
+{
+    margin: auto;
+    border-collapse: collapse;
+}
+.zamowienie th, .zamowienie td
+{
+    border: 2px solid rgb(46, 40, 40);
+    padding: 10px;
+}
+h3{
+    text-align: center;
+}
+.srodek
+{
+    text-align: center;
+}
+.lista-srodek{
+    width: max-content;
+    margin: 16px auto;
+}
