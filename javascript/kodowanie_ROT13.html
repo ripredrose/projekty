@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Kodowanie ROT13</legend>
+        wpisz tekst:
+        <textarea  id="tekst" value=""></textarea>
+        <input type="button" value="koduj/dekoduj" onclick="KD()">
+        <textarea  id="wynik" value=""></textarea>  </textarea>
+    </fieldset>
+    <script>
+        document.querySelector('#wynik').value = " ";
+        function KD()
+        {
+           // var tekst = document.getElementById('tekst').value;
+            var tekst = document.querySelector('#tekst').value;
+            document.querySelector('#wynik').value = " ";
+            for(var i=0; i<tekst.length; i++)
+            {
+                var kodZnak = tekst.charCodeAt(i);
+                var nowyKod = null;
+                if(kodZnak >= 65 && kodZnak <= 90)
+			          {
+                    var nowyKod = kodZnak + 13;
+                    if(nowyKod>90)
+                        nowyKod-=26;
+                }
+                else if(kodZnak >= 97 && kodZnak <= 122)
+			          {
+                    var nowyKod = kodZnak + 13;
+                    if(nowyKod>122)
+                    {
+                        nowyKod-=26;
+                    }
+                }
+                else
+                    nowyKod = kodZnak;
+                var nowyZnak = String.fromCharCode(nowyKod);
+                document.querySelector('#wynik').value += nowyZnak;
+            } 
+        }
+        
+
+    </script>
+</body>
+</html>
