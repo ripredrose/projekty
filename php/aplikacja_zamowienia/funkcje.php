@@ -46,19 +46,19 @@ function wyborAnkiety(){
 function ankieta(){
     switch(wyborAnkiety()){
         case 1:
-            echo "fajny masz internet";
+            echo "super internet";
             break;
         case 2:
-            echo "super ta gazeta";
+            echo "super gazeta";
             break;
         case 3:
-            echo "ale ty niemasz znajomych";
+            echo "trzymaj tak dalej ze znajomymi";
             break;
         case 4:
-            echo "pozdro z 15min reklamami";
+            echo "tv: reklama";
             break;
         case 5:
-            echo "koks";
+            echo "super";
             break;
         default:
             echo "blednie wypelniona ankieta";
