@@ -23,5 +23,4 @@ def Cezar_koduj(txt, skok, kod=0, zaszyfrowany=""):
             else:
                 zaszyfrowany += chr(ord(txt[i]) + skok)
     return zaszyfrowany
-
 print(Cezar_koduj("abcz",4))
