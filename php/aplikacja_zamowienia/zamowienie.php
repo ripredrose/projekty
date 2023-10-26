@@ -14,13 +14,6 @@ require_once("funkcje.php");
     $ram = czytanko($_POST['iloscRam']);
     $hdd = czytanko($_POST['iloscHDD']);
     $ankieta = czytanko($_POST['ankieta']);
-    //kwota netto
-    
-    /*
-     1. kwota stala z vatem(23%)
-     2. wyliczyc i zapamietac kwote w zmiennej kwote zamowienia brutto
-     3. wypisac kwote brutto sformatowana zgodnie z netto
-    */
     $czas = date('Y-m-d  H:i:s');
 
     //zapisywanie do pliku
