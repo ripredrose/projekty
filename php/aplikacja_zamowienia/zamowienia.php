@@ -23,7 +23,11 @@
             <th>ankieta</th>
         </tr>
         <?php
-            $ankieta=array(0,0,0,0,0);
+            $ankieta1= 0;
+            $ankieta2= 0;
+            $ankieta3= 0;
+            $ankieta4= 0;
+            $ankieta5= 0;
             require_once('funkcje.php');
             $dane = file('dane.dat');
             foreach($dane as $linia){
@@ -39,16 +43,35 @@
                 echo "<td>". Nformat($zamowienie[5]+$zamowienie[6]) . "</td>";
                 echo "<td>$zamowienie[7]</td>";
                 echo "</tr>";
-            $ankieta[$zamowienie[7]-1]++;
+                switch($zamowienie[7])
+                {
+                    case 1:
+                        $ankieta1++;
+                        break;
+                    case 2:
+                        $ankieta2++;
+                        break;
+                    case 3:
+                        $ankieta3++;
+                        break;
+                    case 4:
+                        $ankieta4++;
+                        break;
+                    case 5:
+                        $ankieta5++;
+                        break;
+                }
             }
+            $wszystkich = sizeof($dane); 
+            echo "ankieta1: $ankieta1 (".fprocent(($ankieta1/$wszystkich)).")<br>";
+            echo "ankieta2: $ankieta2 (".fprocent(($ankieta2/$wszystkich)).")<br>";
+            echo "ankieta3: $ankieta3 (".fprocent(($ankieta3/$wszystkich)).")<br>";
+            echo "ankieta4: $ankieta4 (".fprocent(($ankieta4/$wszystkich)).")<br>";
+            echo "ankieta5: $ankieta5 (".fprocent(($ankieta5/$wszystkich)).")<br>";
+            echo 'wszystkie:'.$wszystkich;
         ?>
     </table>
-    <?php     
-        $wszystkich = sizeof($dane);
-        foreach($ankieta as $linia)
-        {
-            echo "ankieta: ".$linia . "(".fprocent(($linia/$wszystkich)).")<br>";
-        }
+    <?php       
     ?>
 </body>
 </html>
