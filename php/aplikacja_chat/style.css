@@ -1,0 +1,227 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background: #666;
+    margin:0 15%;
+}
+header{
+    background: #111;
+    height: 4em;
+    height: 64px; 
+    margin: auto 0;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.kontener{
+
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+    background: #111;
+}
+
+/* nav od znajomych */
+.znajomi{
+    
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    padding: 0.5em;
+    text-align: center;
+    width: 20%;
+    margin: 0;
+    background:#333 ;
+}
+.znajomi>ul{
+    height: 88%;
+}
+li{
+    
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5em;
+    border-bottom: solid 1px black;
+    
+}
+.znajomy:hover{
+    background: #222;
+    
+    cursor: pointer;
+}
+.szukaj{
+    height: 6%;
+    border-radius: 2em;
+    border: 1px solid black;
+    padding: 12px;
+    background: #999;
+    text-align: center;
+}
+.ikona{
+    background-image: url();
+    position: relative;
+    background: #111 center no-repeat ;
+    background-size:contain;
+    border-radius: 100%;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    
+}
+.pomoc{
+    width: 85%;
+}
+.nazwa{
+    padding: 1px;
+    text-align: center;
+}
+.media{
+    display: flex;
+    height: 6%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.czat{
+    width: 80%;
+    margin: 0;  
+}
+/* opis rozmówcy */
+.panel_gorny{
+    background: #444;
+    width: 100%;
+    height: 6%;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.panel_gorny>.ikona{
+    text-align: right;
+}
+
+
+
+/* wiadomosci */
+.wiadomosci{
+    padding: 2em;
+    background: #222;
+    height: 88%;
+    width: 100%;
+    overflow:scroll;
+    overflow-x: hidden;
+    overflow-y:auto;
+}
+.wiadomosc{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1em 0;
+}
+
+.tresc{
+    margin: 0 0.5em;
+    max-width: 90%;
+    border-radius: 2em;
+    padding: 0.7em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uzytkownik1>.tresc {
+    background-color: #228abb;
+}
+
+.uzytkownik2{
+    align-items: center;
+    justify-content: end;
+}
+.uzytkownik2>.tresc{
+    background: #333;
+}
+.ostatni_tekst{
+    overflow: hidden;
+}
+
+
+
+/* wysyłanie */
+.panel_dolny{
+    display: flex;
+    flex-direction: row;
+    height: 6%;
+}
+.widomosc_do_wysylania{
+    display: flex;
+    color: white;
+    text-wrap: wrap;
+    font-size: 1.3em;
+    width: 85%;
+    background: #111;
+    padding: 10px;
+    scroll-behavior: smooth;
+    border: none;
+    resize:none
+
+}
+.wyslij{
+    margin: 0.5em;
+    letter-spacing: 0.2em;
+    background: #228abb;
+    border-radius: 2em;
+    width: 15%;
+}
+
+
+
+
+
+
+
+
+
+/* ikona aktywnosci */
+.material-symbols-outlined {
+    font-size: 40px;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; 
+    font-variation-settings:
+    'FILL' 100,
+    'wght' 400,
+    'GRAD' 0,
+    'OPSZ' 40
+    
+}
+.aktywnosc{
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    padding: 5px;
+}
+.aktywny{
+ color: green;   
+}
+.nieaktywny{
+    color: red;
+}
+::-webkit-scrollbar{
+    background-color: #999;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #444;
+    border-radius: 2em;
+}
