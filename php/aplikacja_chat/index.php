@@ -1,5 +1,5 @@
 
-<!-- projekt w rozwoju -->
+<!-- projekt porzucony na rzecz tworzenia w react -->
 
 
 <!DOCTYPE html>
